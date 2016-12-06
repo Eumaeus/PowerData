@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="schemas/cite/CiteCollectionInventory.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<collectionService xmlns="http://chs.harvard.edu/xmlns/cite"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.0">
+    <!-- Extensions provide extra capabilities for special data types, e.g. images, geo-spatial data, or graphs -->
+    <extensions>
+        <extension abbr="cite:CiteImage" uri="http://chs.harvard.edu/cite/chsimg"/>
+        <extension abbr="cite:CiteCGS" uri="http://chs.harvard.edu/cite/cgs"/>
+    </extensions>
+
+
+    <!-- *********************************
+       A Collection of the U. Washington Test Cases.
+
+       Each object in this collection is a graph of busses and branches. The collection is extended by
+       the CITE Canonical Graph Services extension. Regular CITE Collection services suffice to identification
+       and retrieval of busses, branches, and test-cases by URN. CiteCGS adds graph-specifiic operations.
+    -->
+
+    <citeCollection canonicalId="urn" label="label" urn="urn:cite:drpower:ieeeTests">
+        <namespaceMapping abbr="drpower" uri="http://energyenvironment.pnnl.gov/datans/drpower"/>
+        <extendedBy extension="cite:CiteCGS"/>
+        <dc:title xmlns="http://purl.org/dc/elements/1.1/">Power Systems Test Case Archive</dc:title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Christopher Blackwell</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">The UW Power System Test Case Archive.</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Provides World Wide Web access to power system data (test cases). The site is maintained by Richard D. Christie, an Associate Professor at the University of Washington, Seattle, Washington, USA. Send submissions, questions and requests to christie@ee.washington.edu. Transformation into the CITE Architecture by Christopher Blackwell</description>
+        <rights xmlns="http://purl.org/dc/elements/1.1/">This archive is operated voluntarily as a public service. No guarantees of any kind regarding the correctness, currency, functionality, usability or any other attribute of the archived material can be made. Use at your own risk. Material in the archive is intended for purposes of research and education, not for commercial gain. Material that is known to be copyrighted or proprietary will not be accepted without specific permission from the owner. Copyrighted or proprietary material that inadvertently appears in the archive will be removed as soon as its status is called to the attention of the archive maintainer.</rights>
+        <source type="file" value="ieeetests.csv"/>
+        <citeProperty name="urn" label="Cite Urn" type="citeurn"/>
+        <citeProperty label="Label" name="label" type="string"></citeProperty>
+        <citeProperty type="string" name="description" label="Description"></citeProperty>
+    </citeCollection>
+
+
+    <citeCollection canonicalId="urn" label="label" urn="urn:cite:drpower:nullNode">
+        <namespaceMapping abbr="drpower" uri="http://energyenvironment.pnnl.gov/datans/drpower"/>
+        <dc:title xmlns="http://purl.org/dc/elements/1.1/">Null Node</dc:title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Christopher Blackwell</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">Explicit identity for a null-node in the graph.</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Exllicit identity for a null-node in the graph.</description>
+        <rights xmlns="http://purl.org/dc/elements/1.1/">Public Domain. CC-0.</rights>
+        <source type="file" value="nullnode.csv"/>
+        <citeProperty name="urn" label="Cite Urn" type="citeurn"/>
+        <citeProperty label="Label" name="label" type="string"></citeProperty>
+        <citeProperty type="string" name="description" label="Description"></citeProperty>
+    </citeCollection>
+
+
+    <!-- *********************************
+       A Collection of Busses cited in the 14-bus test case
+    -->
+
+    <citeCollection canonicalId="urn" label="label" urn="urn:cite:drpower:ieee14bus">
+        <namespaceMapping abbr="drpower" uri="http://energyenvironment.pnnl.gov/datans/drpower"/>
+        <dc:title xmlns="http://purl.org/dc/elements/1.1/">14-bus test busses</dc:title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Christopher Blackwell</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">The UW Power System Test Case Archive 14-bus test.</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Busses from the ieee 14-bus test. Transformation into the CITE Architecture by Christopher Blackwell</description>
+
+        <rights xmlns="http://purl.org/dc/elements/1.1/">This archive is operated voluntarily as a public service. No guarantees of any kind regarding the correctness, currency, functionality, usability or any other attribute of the archived material can be made. Use at your own risk. Material in the archive is intended for purposes of research and education, not for commercial gain. Material that is known to be copyrighted or proprietary will not be accepted without specific permission from the owner. Copyrighted or proprietary material that inadvertently appears in the archive will be removed as soon as its status is called to the attention of the archive maintainer.</rights>
+				<source type="file" value="14-bus-busses.csv"/>
+        <citeProperty name="urn" label="Urn" type="citeurn"></citeProperty>
+        <citeProperty label="Bus Number" name="number" type="number"></citeProperty>
+        <citeProperty label="Bus Name" name="label" type="string"></citeProperty>
+        <citeProperty label="Load Flow Area Number" name="lfan" type="number"></citeProperty>
+        <citeProperty label="Loss Zone Number" name="lzn" type="number"/>
+        <citeProperty label="Type" name="type" type="number">
+            <valueList>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </valueList>
+        </citeProperty>
+        <citeProperty label="Final Voltage p.u." name="fvpu" type="number"></citeProperty>
+        <citeProperty label="Final Anble, degrees" name="fa" type="number"></citeProperty>
+        <citeProperty label="Load MW" name="loadmw" type="number"></citeProperty>
+        <citeProperty label="Load MVAR" name="loadmvar" type="number"></citeProperty>
+        <citeProperty label="Generation MW" name="generationmw" type="number"></citeProperty>
+        <citeProperty label="Generation MVAR" name="generationmvar" type="number"></citeProperty>
+        <citeProperty label="Base KV" name="basekv" type="number"></citeProperty>
+        <citeProperty label="Desired Volts p.u." name="desiredvolts" type="number"></citeProperty>
+        <citeProperty label="Maximum MVAR" name="maxmvar" type="number"></citeProperty>
+        <citeProperty label="Minimum MVAR" name="minmvar" type="number"></citeProperty>
+        <citeProperty label="Shunt Conductance G (per unit)" name="shuntcondg" type="number"></citeProperty>
+        <citeProperty label="Shunt Susceptance B (per unit)" name="shuntsuscb" type="number"></citeProperty>
+        <citeProperty label="Remote Controlled Bus Number" name="remotebusno" type="number"></citeProperty>
+        <citeProperty label="Remote Controlled Bus URN" name="remotebusurn" type="citeurn"></citeProperty>
+    </citeCollection>
+
+
+    <!-- *********************************
+       A Collection of Branches cited in the 14-bus test case. These branches are edges in a graph, organizing the busses.
+    -->
+
+    <citeCollection canonicalId="urn" label="label" urn="urn:cite:drpower:ieee14branch">
+        <namespaceMapping abbr="drpower" uri="http://energyenvironment.pnnl.gov/datans/drpower"/>
+        <dc:title xmlns="http://purl.org/dc/elements/1.1/">14-bus test branches</dc:title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Christopher Blackwell</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">The UW Power System Test Case Archive 14-bus test.</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Branches from the ieee 14-bus test. Transformation into the CITE Architecture by Christopher Blackwell</description>
+
+        <rights xmlns="http://purl.org/dc/elements/1.1/">This archive is operated voluntarily as a public service. No guarantees of any kind regarding the correctness, currency, functionality, usability or any other attribute of the archived material can be made. Use at your own risk. Material in the archive is intended for purposes of research and education, not for commercial gain. Material that is known to be copyrighted or proprietary will not be accepted without specific permission from the owner. Copyrighted or proprietary material that inadvertently appears in the archive will be removed as soon as its status is called to the attention of the archive maintainer.</rights>
+        <source type="file" value="14-bus-branches.csv"/>
+        <citeProperty name="urn" label="Urn" type="citeurn"></citeProperty>
+        <citeProperty name="index" label="Index" type="string"></citeProperty>
+        <citeProperty type="number" name="tapbusno" label="Tap Bus Number"></citeProperty>
+        <citeProperty type="citeurn" name="tapbusurn" label="Tap Bus URN"></citeProperty>
+        <citeProperty type="number" name="zbusno" label="Z Bus Number"></citeProperty>
+        <citeProperty type="citeurn" name="zbusurn" label="Z Bus URN"></citeProperty>
+        <citeProperty type="number" name="loadflowarea" label="Load Flow Area"></citeProperty>
+        <citeProperty type="number" name="losszone" label="Loss Zone"></citeProperty>
+        <citeProperty type="number" name="circuit" label="Circuit"></citeProperty>
+        <citeProperty type="number" name="type" label="Type">
+            <valueList>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </valueList>
+        </citeProperty>
+        <citeProperty type="string" name="label" label="Type"></citeProperty>
+        <citeProperty type="number" name="branchresist" label="Branch Resistance R, per unit"></citeProperty>
+        <citeProperty type="number" name="branchreact" label="Branch Reactance X, per unit"></citeProperty>
+        <citeProperty type="number" name="linechargeb" label="Line Charging B, per unit"></citeProperty>
+        <citeProperty type="number" name="linemva1" label="Line MVA rating No 1"></citeProperty>
+        <citeProperty type="number" name="linemva2" label="Line MVA rating No 2"></citeProperty>
+        <citeProperty type="number" name="linemva3" label="Line MVA rating No 3"></citeProperty>
+        <citeProperty type="number" name="controlbusno" label="Control Bus Number"></citeProperty>
+        <citeProperty type="citeurn" name="controlbusurn" label="Control Bus URN"></citeProperty>
+        <citeProperty type="number" name="side" label="Side">
+            <valueList>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+            </valueList>
+        </citeProperty>
+        <citeProperty type="number" name="transfinalturns" label="Transformer Final Turns Ratio"></citeProperty>
+        <citeProperty type="number" name="transfinalangle" label="Transformer (phase shifter) final angle"></citeProperty>
+        <citeProperty type="number" name="minphaseshift" label="Minimum Phase Shift"></citeProperty>
+        <citeProperty type="number" name="maxphaseshift" label="Maximum PHase Shift"></citeProperty>
+        <citeProperty type="number" name="stepsize" label="Step Size"></citeProperty>
+        <citeProperty type="number" name="minvoltage" label="Minimum voltage, MVAR or MW limit"></citeProperty>
+        <citeProperty type="number" name="maxvoltage" label="Maximum voltage, MVAR or MW limit"></citeProperty>
+    </citeCollection>
+
+
+    <!-- *********************************
+       A Collection of Busses cited in the 30-bus test case
+    -->
+
+<!--
+    <citeCollection canonicalId="urn" label="label" urn="urn:cite:drpower:ieee30us">
+        <namespaceMapping abbr="drpower" uri="http://energyenvironment.pnnl.gov/datans/drpower"/>
+        <dc:title xmlns="http://purl.org/dc/elements/1.1/">30 bus test busses</dc:title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Christopher Blackwell</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">The UW Power System Test Case Archive 30-bus test.</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Busses from the ieee 30bus test. Transformation into the CITE Architecture by Christopher Blackwell</description>
+
+        <rights xmlns="http://purl.org/dc/elements/1.1/">This archive is operated voluntarily as a public service. No guarantees of any kind regarding the correctness, currency, functionality, usability or any other attribute of the archived material can be made. Use at your own risk. Material in the archive is intended for purposes of research and education, not for commercial gain. Material that is known to be copyrighted or proprietary will not be accepted without specific permission from the owner. Copyrighted or proprietary material that inadvertently appears in the archive will be removed as soon as its status is called to the attention of the archive maintainer.</rights>
+				<source type="file" value="30-bus-busses.tsv"/>
+        <citeProperty name="urn" label="Urn" type="citeurn"></citeProperty>
+        <citeProperty label="Bus Number" name="" type="number"></citeProperty>
+        <citeProperty label="Bus Name" name="label
+            " type="string"></citeProperty>
+        <citeProperty label="Load Flow Area Number" name="lfan" type="number"></citeProperty>
+        <citeProperty label="Loss Zone Number" name="lzn" type="number"/>
+        <citeProperty label="Type" name="type" type="number">
+            <valueList>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </valueList>
+        </citeProperty>
+        <citeProperty label="Final Voltage p.u." name="fvpu" type="number"></citeProperty>
+        <citeProperty label="Final Anble, degrees" name="fa" type="number"></citeProperty>
+        <citeProperty label="Load MW" name="loadmw" type="number"></citeProperty>
+        <citeProperty label="Load MVAR" name="loadmvar" type="number"></citeProperty>
+        <citeProperty label="Generation MW" name="generationmw" type="number"></citeProperty>
+        <citeProperty label="Generation MVAR" name="generationmvar" type="number"></citeProperty>
+        <citeProperty label="Base KV" name="basekv" type="number"></citeProperty>
+        <citeProperty label="Desired Volts p.u." name="desiredvolts" type="number"></citeProperty>
+        <citeProperty label="Maximum MVAR" name="maxmvar" type="number"></citeProperty>
+        <citeProperty label="Minimum MVAR" name="minmvar" type="number"></citeProperty>
+        <citeProperty label="Shunt Conductance G (per unit)" name="shuntcondg" type="number"></citeProperty>
+        <citeProperty label="Shunt Susceptance B (per unit)" name="shuntsuscb" type="number"></citeProperty>
+        <citeProperty label="Remote Controlled Bus Number" name="remotebusno" type="number"></citeProperty>
+        <citeProperty label="Remote Controlled Bus URN" name="remotebusurn" type="citeurn"></citeProperty>
+    </citeCollection>
+	-->
+
+    <!-- *********************************
+       A Collection of Branches cited in the 30bus test case. These branches are edges in a graph, organizing the busses.
+    -->
+
+		<!--
+    <citeCollection canonicalId="urn" label="label" urn="urn:cite:drpower:ieee30branch">
+        <namespaceMapping abbr="drpower" uri="http://energyenvironment.pnnl.gov/datans/drpower"/>
+        <dc:title xmlns="http://purl.org/dc/elements/1.1/">30-bus test busses</dc:title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Christopher Blackwell</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">The UW Power System Test Case Archive 30bus test.</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Busses from the ieee 30-bus test. Transformation into the CITE Architecture by Christopher Blackwell</description>
+
+        <rights xmlns="http://purl.org/dc/elements/1.1/">This archive is operated voluntarily as a public service. No guarantees of any kind regarding the correctness, currency, functionality, usability or any other attribute of the archived material can be made. Use at your own risk. Material in the archive is intended for purposes of research and education, not for commercial gain. Material that is known to be copyrighted or proprietary will not be accepted without specific permission from the owner. Copyrighted or proprietary material that inadvertently appears in the archive will be removed as soon as its status is called to the attention of the archive maintainer.</rights>
+				<source type="file" value="30-bus-busses.tsv"/>
+        <citeProperty name="urn" label="Urn" type="citeurn"></citeProperty>
+        <citeProperty type="number" name="tapbusno" label="Tap Bus Number"></citeProperty>
+        <citeProperty type="citeurn" name="tapbusurn" label="Tap Bus URN"></citeProperty>
+        <citeProperty type="number" name="zbusno" label="Z Bus Number"></citeProperty>
+        <citeProperty type="citeurn" name="zbusurn" label="Z Bus URN"></citeProperty>
+        <citeProperty type="number" name="loadflowarea" label="Load Flow Area"></citeProperty>
+        <citeProperty type="number" name="losszone" label="Loss Zone"></citeProperty>
+        <citeProperty type="number" name="circuit" label="Circuit"></citeProperty>
+        <citeProperty type="number" name="type" label="Type">
+            <valueList>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </valueList>
+        </citeProperty>
+        <citeProperty type="string" name="label" label="Type"></citeProperty>
+        <citeProperty type="number" name="branchresist" label="Branch Resistance R, per unit"></citeProperty>
+        <citeProperty type="number" name="pranchreact" label="Branch Reactance X, per unit"></citeProperty>
+        <citeProperty type="number" name="linechargeb" label="Line Charging B, per unit"></citeProperty>
+        <citeProperty type="number" name="linemva1" label="Line MVA rating No 1"></citeProperty>
+        <citeProperty type="number" name="linemva2" label="Line MVA rating No 2"></citeProperty>
+        <citeProperty type="number" name="linemva3" label="Line MVA rating No 3"></citeProperty>
+        <citeProperty type="number" name="controlbusno" label="Control Bus Number"></citeProperty>
+        <citeProperty type="citeurn" name="controlbusurn" label="Control Bus URN"></citeProperty>
+        <citeProperty type="number" name="side" label="Side">
+            <valueList>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+            </valueList>
+        </citeProperty>
+        <citeProperty type="number" name="transfinalturns" label="Transformer Final Turns Ratio"></citeProperty>
+        <citeProperty type="number" name="transfinalangle" label="Transformer (phase shifter) final angle"></citeProperty>
+        <citeProperty type="number" name="minphaseshift" label="Minimum Phase Shift"></citeProperty>
+        <citeProperty type="number" name="maxphaseshift" label="Maximum PHase Shift"></citeProperty>
+        <citeProperty type="number" name="stepsize" label="Step Size"></citeProperty>
+        <citeProperty type="number" name="" label=""></citeProperty>
+        <citeProperty type="number" name="minvoltage" label="Minimum voltage, MVAR or MW limit"></citeProperty>
+    </citeCollection>
+	-->
+
+</collectionService>
